@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Ton attestation — La Clique, centre de formation</title>
+<meta name="description" content="Ton attestation de réussite de La Clique, à télécharger et à partager.">
+<link rel="stylesheet" href="./css/fonts.css?v=20261004">
+<link rel="stylesheet" href="./css/cours.css?v=20261012">
+<link rel="stylesheet" href="./css/attestation.css?v=20261012">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;display=swap">
+<link rel="stylesheet" href="./css/la-clique.css?v=20261012">
+</head>
+<body>
+<div class="lc-decor" aria-hidden="true"><span class="lc-spark big t3" style="left:72%;top:12%;rotate:14deg"></span><span class="lc-spark t2 pk" style="left:86%;top:30%;rotate:-28deg;animation-delay:1.2s"></span><span class="lc-spark gr" style="left:8%;top:70%;rotate:38deg;animation-delay:2.1s"></span><span class="lc-spark" style="left:58%;top:6%;rotate:-10deg;animation-delay:.6s"></span></div>
+<header class="c-top">
+  <a class="c-brand" href="./index.html" aria-label="Retour au site">
+    <img class="c-mark" src="./assets/brand/mark.svg" alt="" width="26" height="26">
+    <span>La Clique</span>
+  </a>
+  <a class="c-tb" style="margin-left:auto;text-decoration:none" id="aBack" href="./cours.html">‹ Retour au cours</a>
+</header>
+
+<main class="a-main">
+  <div class="a-intro">
+    <h1 id="aTitle">Ton attestation 🎓</h1>
+    <p id="aLead">Écris ton nom, ajoute ta photo si tu veux, puis télécharge-la ou partage-la.</p>
+    <p class="a-lock" id="aLock" hidden></p>
+  </div>
+
+  <div class="a-grid">
+    <div class="a-preview">
+      <canvas id="aCanvas" width="1080" height="1890" aria-label="Aperçu de ton attestation"></canvas>
+      <p class="a-tip" id="aTip">Glisse la photo ou le chapeau directement sur l’image.</p>
+    </div>
+
+    <div class="a-panel">
+      <div class="a-lab" id="aVerLab">Version de ton attestation</div>
+      <div class="a-seg" id="aVerSeg" role="radiogroup" aria-labelledby="aVerLab">
+        <button type="button" data-v="courte" class="on" role="radio" aria-checked="true">Abrégée</button>
+        <button type="button" data-v="detail" role="radio" aria-checked="false">Détaillée, avec tes notes</button>
+      </div>
+      <p class="a-priv">La version détaillée ajoute ton relevé de notes : la note de chaque défi et ta note finale.</p>
+
+      <label class="a-lab" for="aName">Ton nom</label>
+      <input class="a-in" id="aName" type="text" maxlength="40" autocomplete="name" placeholder="Prénom Nom">
+
+      <div class="a-lab">Ta photo <small>(facultatif)</small></div>
+      <div class="a-row">
+        <label class="c-tb a-file">📷 Choisir une photo<input id="aFile" type="file" accept="image/*" hidden></label>
+        <button class="c-tb" id="aNoPhoto" type="button" hidden>Remettre Clic</button>
+      </div>
+      <p class="a-priv">🔒 Ta photo reste sur ton appareil. Elle n’est jamais envoyée nulle part : tout se fait dans ton navigateur.</p>
+
+      <div class="a-lab">Ce que tu bouges en glissant</div>
+      <div class="a-seg" id="aModeSeg" role="radiogroup" aria-label="Ce que tu bouges en glissant">
+        <button type="button" data-t="cap" class="on" role="radio" aria-checked="true">🎓 Le chapeau</button>
+        <button type="button" data-t="photo" role="radio" aria-checked="false">🖼️ La photo</button>
+      </div>
+
+      <label class="a-lab" for="aCapSize">Grosseur du chapeau</label>
+      <input class="a-rng" id="aCapSize" type="range" min="40" max="220" value="120">
+      <label class="a-lab" for="aCapRot">Pencher le chapeau</label>
+      <input class="a-rng" id="aCapRot" type="range" min="-45" max="45" value="-8">
+      <label class="a-lab" for="aZoom">Zoom sur la photo</label>
+      <input class="a-rng" id="aZoom" type="range" min="100" max="300" value="100">
+      <label class="a-chk"><input id="aCap" type="checkbox" checked> Mettre le chapeau de gradué</label>
+
+      <div class="a-actions">
+        <button class="c-next" id="aDl" type="button">Télécharger l’image</button>
+        <button class="c-tb" id="aShare" type="button" hidden>Partager…</button>
+      </div>
+      <p class="a-msg" id="aMsg" aria-live="polite"></p>
+    </div>
+  </div>
+</main>
+
+<script src="./js/la-clique-cles.js?v=20261012"></script>
+<script src="./js/alphabet-data.js?v=20261030"></script>
+<script src="./js/algebre-data.js?v=20261028"></script>
+<script src="./js/attestation.js?v=20261017"></script>
+</body>
+</html>

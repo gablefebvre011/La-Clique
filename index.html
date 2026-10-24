@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="fr" class="accueil">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>La Clique — La cybersécurité, une image d'abord</title>
+<meta name="description" content="La Clique t'apprend la cybersécurité avec des images de la vie de tous les jours, puis te fait pratiquer sur un ordinateur virtuel où rien ne peut se casser. Fait au Québec.">
+<meta name="theme-color" content="#02050c">
+<link rel="stylesheet" href="./css/fonts.css?v=20261012">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;family=Oswald:wght@500;600&amp;display=swap">
+<link rel="stylesheet" href="./css/accueil.css?v=20261019">
+</head>
+<body>
+<!-- Psst, détective… t'as lu le mur? Voici ton message secret : QnJhdm8sIGTDqXRlY3RpdmUuIENsaWMgdCdhIMOgIGwnxZNpbC4= -->
+<div class="page" id="page" style="position: relative; font-family: 'Space Grotesk', system-ui, sans-serif; color: #e6f1ff; background: #02050c; min-height: 100vh;">
+
+  <header style="position: absolute; top: 0; left: 0; right: 0; z-index: 5; background: transparent;">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: nowrap;">
+      <a href="#haut" class="brand" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #e6f1ff;">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#00ffff" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true" style="transition: filter .25s;"><path d="M14 2.5 4 6.5v7c0 6 4.2 10 10 12 5.8-2 10-6 10-12v-7L14 2.5Z"></path><path class="zap" d="m15.5 8.5-4 6.5h4l-1.5 5 4.5-7h-4l1-4.5Z" fill="#00ffff" stroke="none"></path></svg>
+        <span style="font-weight: 700; letter-spacing: 0.24em; font-size: 15px;">LA CLIQUE</span>
+      </a>
+      <nav class="nav" aria-label="Sections" style="display: flex; gap: 28px; font-size: 15px; margin-left: 12px;">
+        <a href="#methode">La méthode</a>
+        <a href="#parcours">Les parcours</a>
+        <a href="#ordi">L'ordinateur virtuel</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div style="display: flex; gap: 10px; align-items: center; flex-shrink: 0;">
+        <button type="button" id="btnMenu" class="btn-menu" aria-label="Explorer La Clique : la méthode, les parcours, l'ordinateur virtuel, Clic, le contact" aria-controls="ecrans"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 5.5h14M3 10h14M3 14.5h14"/></svg></button>
+        <button type="button" id="btnConnexion" class="btn-glow" aria-haspopup="dialog" aria-controls="auth" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; font: inherit; font-size: 15px; border: 1px solid rgba(255,255,255,0.3); border-radius: 999px; color: #e6f1ff; background: rgba(2,5,12,0.25); backdrop-filter: blur(6px); cursor: pointer;">Se connecter</button>
+        <a href="./cours.html" class="hide-sm btn-glow" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border-radius: 999px; background: #ffffff; color: #07142e; text-decoration: none; font-weight: 700; font-size: 15px;">Commencer</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="haut" style="position: relative; overflow: hidden;">
+    <img src="./assets/ville-nuit-1920.jpg" srcset="./assets/ville-nuit-1920.jpg 1920w, ./assets/ville-nuit.jpg 3840w" sizes="100vw" alt="" fetchpriority="high" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 50%; opacity: 0.95; filter: saturate(1.15) contrast(1.08);">
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,255,255,0.10), rgba(131,56,236,0.08) 60%, transparent); mix-blend-mode: screen;"></div>
+    <div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(2,5,12,0.9) 0%, rgba(2,5,12,0.55) 48%, rgba(2,5,12,0.05) 100%);"></div>
+    <div aria-hidden="true" class="glow-drift" style="position: absolute; right: -8%; top: -18%; width: 60%; height: 60%; background: radial-gradient(closest-side, rgba(0,255,255,0.28), transparent); pointer-events: none;"></div>
+    <div aria-hidden="true" class="glow-drift" style="position: absolute; left: 30%; top: -25%; width: 45%; height: 45%; background: radial-gradient(closest-side, rgba(255,0,255,0.16), transparent); pointer-events: none; animation-delay: -6s;"></div>
+    <div aria-hidden="true" class="skyA" style="position: absolute; inset: 0; background: radial-gradient(38% 34% at 80% 8%, rgba(150,230,255,0.6), transparent 70%); mix-blend-mode: screen; pointer-events: none;"></div>
+    <div aria-hidden="true" class="skyB" style="position: absolute; inset: 0; background: radial-gradient(34% 30% at 52% 4%, rgba(140,160,255,0.5), transparent 70%); mix-blend-mode: screen; pointer-events: none;"></div>
+    <svg aria-hidden="true" class="bolt boltA" style="right: 13%; top: 0; width: 120px; height: 42%;" viewBox="15 -5 135 310" preserveAspectRatio="none" fill="none" stroke-linejoin="round" stroke-linecap="round"><path d="M60.0 0.0 L63.1 4.2 L68.3 8.1 L73.5 12.5 L79.8 17.2 L77.5 22.0 L79.7 26.9 L80.4 31.8 L80.8 36.7 L82.2 41.1 L78.2 45.7 L71.3 48.1 L65.9 53.0 L60.3 58.4 L59.2 63.3 L59.1 68.3 L57.4 73.4 L66.0 78.1 L68.4 83.0 L73.6 87.0 L74.8 91.9 L83.2 97.1 L86.1 101.1 L93.9 106.1 L96.2 112.1 L90.4 115.9 L83.1 121.6 L83.9 127.2 L78.3 132.7 L81.5 138.0 L85.4 142.2 L83.7 146.8 L85.9 151.4 L85.8 156.2 L82.9 160.8 L82.7 165.8 L80.6 171.0 L79.6 175.6 L84.5 180.6 L92.0 185.5 L94.7 191.4 L91.1 196.9 L83.5 202.4 L84.0 207.1 L85.6 212.0 L81.6 215.2 L73.3 218.1 L67.1 222.3 L59.3 227.0 L59.1 231.5 L64.2 235.6 L62.5 239.8 L61.0 244.2 L60.9 248.4 L62.8 252.9 L55.6 257.0 L53.4 262.2 L49.7 266.7 L50.8 271.6 L53.5 276.1 L54.9 280.9 L51.5 285.6 L42.6 291.0 L44.0 295.7 L40.0 300.0" stroke="#00ffff" stroke-width="6" stroke-opacity="0.35" vector-effect="non-scaling-stroke"></path><path d="M60.0 0.0 L63.1 4.2 L68.3 8.1 L73.5 12.5 L79.8 17.2 L77.5 22.0 L79.7 26.9 L80.4 31.8 L80.8 36.7 L82.2 41.1 L78.2 45.7 L71.3 48.1 L65.9 53.0 L60.3 58.4 L59.2 63.3 L59.1 68.3 L57.4 73.4 L66.0 78.1 L68.4 83.0 L73.6 87.0 L74.8 91.9 L83.2 97.1 L86.1 101.1 L93.9 106.1 L96.2 112.1 L90.4 115.9 L83.1 121.6 L83.9 127.2 L78.3 132.7 L81.5 138.0 L85.4 142.2 L83.7 146.8 L85.9 151.4 L85.8 156.2 L82.9 160.8 L82.7 165.8 L80.6 171.0 L79.6 175.6 L84.5 180.6 L92.0 185.5 L94.7 191.4 L91.1 196.9 L83.5 202.4 L84.0 207.1 L85.6 212.0 L81.6 215.2 L73.3 218.1 L67.1 222.3 L59.3 227.0 L59.1 231.5 L64.2 235.6 L62.5 239.8 L61.0 244.2 L60.9 248.4 L62.8 252.9 L55.6 257.0 L53.4 262.2 L49.7 266.7 L50.8 271.6 L53.5 276.1 L54.9 280.9 L51.5 285.6 L42.6 291.0 L44.0 295.7 L40.0 300.0" stroke="#bff6ff" stroke-width="2.4" stroke-opacity="1" vector-effect="non-scaling-stroke"></path><path d="M86.1 101.1 L85.0 105.3 L85.3 109.5 L82.1 114.2 L82.2 118.7 L91.1 123.1 L95.4 127.9 L97.0 132.8 L97.3 137.4 L100.8 141.4 L105.2 146.4 L104.0 151.2 L105.3 156.0 L103.7 160.9 L102.2 165.5 L108.7 171.4 L113.9 175.7" stroke="#00ffff" stroke-width="3.5" stroke-opacity="0.3" vector-effect="non-scaling-stroke"></path><path d="M86.1 101.1 L85.0 105.3 L85.3 109.5 L82.1 114.2 L82.2 118.7 L91.1 123.1 L95.4 127.9 L97.0 132.8 L97.3 137.4 L100.8 141.4 L105.2 146.4 L104.0 151.2 L105.3 156.0 L103.7 160.9 L102.2 165.5 L108.7 171.4 L113.9 175.7" stroke="#e8fbff" stroke-width="1.2" stroke-opacity="0.9" vector-effect="non-scaling-stroke"></path><path d="M85.4 142.2 L79.5 146.5 L76.7 150.5 L71.3 153.6 L71.1 158.0 L66.2 163.6 L66.7 168.3 L67.8 173.0 L63.1 177.3 L60.4 180.6 L56.1 184.6 L52.8 188.4 L53.3 192.3 L55.2 196.1 L58.6 199.7 L61.4 203.6 L58.9 207.4" stroke="#00ffff" stroke-width="3.5" stroke-opacity="0.3" vector-effect="non-scaling-stroke"></path><path d="M85.4 142.2 L79.5 146.5 L76.7 150.5 L71.3 153.6 L71.1 158.0 L66.2 163.6 L66.7 168.3 L67.8 173.0 L63.1 177.3 L60.4 180.6 L56.1 184.6 L52.8 188.4 L53.3 192.3 L55.2 196.1 L58.6 199.7 L61.4 203.6 L58.9 207.4" stroke="#e8fbff" stroke-width="1.2" stroke-opacity="0.9" vector-effect="non-scaling-stroke"></path><path d="M84.5 180.6 L85.3 182.6 L87.8 185.1 L86.5 187.7 L88.0 190.2 L87.8 192.3 L85.0 194.4 L81.5 196.4 L79.5 199.4 L82.1 202.1 L82.0 205.0 L78.0 207.3 L76.5 210.8 L74.6 212.6 L71.0 213.5 L65.3 216.2 L61.4 218.1" stroke="#00ffff" stroke-width="3.5" stroke-opacity="0.3" vector-effect="non-scaling-stroke"></path><path d="M84.5 180.6 L85.3 182.6 L87.8 185.1 L86.5 187.7 L88.0 190.2 L87.8 192.3 L85.0 194.4 L81.5 196.4 L79.5 199.4 L82.1 202.1 L82.0 205.0 L78.0 207.3 L76.5 210.8 L74.6 212.6 L71.0 213.5 L65.3 216.2 L61.4 218.1" stroke="#e8fbff" stroke-width="1.2" stroke-opacity="0.9" vector-effect="non-scaling-stroke"></path></svg>
+    <svg aria-hidden="true" class="bolt boltB" style="left: 49%; top: 0; width: 90px; height: 30%;" viewBox="15 -5 135 310" preserveAspectRatio="none" fill="none" stroke-linejoin="round" stroke-linecap="round"><path d="M45.0 0.0 L43.9 4.4 L45.3 8.7 L40.7 13.8 L36.0 19.0 L37.4 23.8 L39.6 28.3 L42.5 33.0 L42.0 37.6 L47.8 41.9 L54.2 45.6 L60.3 49.0 L63.0 53.7 L68.1 59.4 L71.2 63.7 L72.0 69.3 L70.3 75.1 L69.5 80.0 L66.3 84.4 L71.8 89.4 L71.6 93.8 L75.1 96.9 L81.0 100.5 L87.6 105.8 L96.6 110.1 L91.1 114.9 L91.4 120.8 L96.1 126.7 L99.6 131.0 L100.3 136.8 L108.0 142.2 L113.5 146.5 L123.4 150.8 L129.5 155.0 L134.0 160.3 L138.4 163.2 L146.5 167.7 L151.8 172.7 L151.7 177.0 L147.7 181.7 L147.2 186.3 L139.6 192.6 L136.8 196.9 L137.5 201.5 L135.2 206.0 L130.2 210.2 L124.5 213.0 L126.4 217.5 L123.0 221.9 L112.8 226.7 L109.2 234.2 L99.2 239.6 L92.7 244.9 L94.0 250.1 L91.8 255.5 L90.4 260.7 L89.5 266.0 L88.3 270.4 L82.2 273.8 L81.9 277.8 L85.2 281.4 L80.3 286.8 L81.1 292.4 L73.4 295.9 L65.0 300.0" stroke="#00ffff" stroke-width="6" stroke-opacity="0.35" vector-effect="non-scaling-stroke"></path><path d="M45.0 0.0 L43.9 4.4 L45.3 8.7 L40.7 13.8 L36.0 19.0 L37.4 23.8 L39.6 28.3 L42.5 33.0 L42.0 37.6 L47.8 41.9 L54.2 45.6 L60.3 49.0 L63.0 53.7 L68.1 59.4 L71.2 63.7 L72.0 69.3 L70.3 75.1 L69.5 80.0 L66.3 84.4 L71.8 89.4 L71.6 93.8 L75.1 96.9 L81.0 100.5 L87.6 105.8 L96.6 110.1 L91.1 114.9 L91.4 120.8 L96.1 126.7 L99.6 131.0 L100.3 136.8 L108.0 142.2 L113.5 146.5 L123.4 150.8 L129.5 155.0 L134.0 160.3 L138.4 163.2 L146.5 167.7 L151.8 172.7 L151.7 177.0 L147.7 181.7 L147.2 186.3 L139.6 192.6 L136.8 196.9 L137.5 201.5 L135.2 206.0 L130.2 210.2 L124.5 213.0 L126.4 217.5 L123.0 221.9 L112.8 226.7 L109.2 234.2 L99.2 239.6 L92.7 244.9 L94.0 250.1 L91.8 255.5 L90.4 260.7 L89.5 266.0 L88.3 270.4 L82.2 273.8 L81.9 277.8 L85.2 281.4 L80.3 286.8 L81.1 292.4 L73.4 295.9 L65.0 300.0" stroke="#bff6ff" stroke-width="2.4" stroke-opacity="1" vector-effect="non-scaling-stroke"></path><path d="M99.6 131.0 L107.0 134.8 L115.4 139.3 L119.6 141.7 L121.5 145.1 L125.1 147.8 L128.0 150.8 L127.4 153.3 L128.8 155.8 L128.1 158.9 L126.4 162.4 L125.9 165.7 L126.6 169.1 L123.6 171.8 L122.3 175.2 L125.0 178.5 L124.8 181.5" stroke="#00ffff" stroke-width="3.5" stroke-opacity="0.3" vector-effect="non-scaling-stroke"></path><path d="M99.6 131.0 L107.0 134.8 L115.4 139.3 L119.6 141.7 L121.5 145.1 L125.1 147.8 L128.0 150.8 L127.4 153.3 L128.8 155.8 L128.1 158.9 L126.4 162.4 L125.9 165.7 L126.6 169.1 L123.6 171.8 L122.3 175.2 L125.0 178.5 L124.8 181.5" stroke="#e8fbff" stroke-width="1.2" stroke-opacity="0.9" vector-effect="non-scaling-stroke"></path><path d="M108.0 142.2 L104.9 145.7 L106.9 149.1 L108.2 153.3 L114.9 156.3 L112.8 160.1 L106.0 163.0 L106.7 166.8 L107.1 170.5 L107.1 173.8 L103.8 177.3 L103.3 180.7 L101.4 184.4 L94.1 187.7 L91.9 192.1 L89.6 195.0 L84.2 198.8" stroke="#00ffff" stroke-width="3.5" stroke-opacity="0.3" vector-effect="non-scaling-stroke"></path><path d="M108.0 142.2 L104.9 145.7 L106.9 149.1 L108.2 153.3 L114.9 156.3 L112.8 160.1 L106.0 163.0 L106.7 166.8 L107.1 170.5 L107.1 173.8 L103.8 177.3 L103.3 180.7 L101.4 184.4 L94.1 187.7 L91.9 192.1 L89.6 195.0 L84.2 198.8" stroke="#e8fbff" stroke-width="1.2" stroke-opacity="0.9" vector-effect="non-scaling-stroke"></path><path d="M147.2 186.3 L147.4 188.8 L148.5 191.3 L149.3 193.7 L149.6 196.4 L152.3 198.6 L156.7 201.5 L160.3 205.1 L162.1 207.6 L166.7 211.3 L169.8 213.3 L170.5 216.0 L172.1 218.5 L171.3 221.0 L171.5 223.5 L173.3 225.5 L176.6 228.1" stroke="#00ffff" stroke-width="3.5" stroke-opacity="0.3" vector-effect="non-scaling-stroke"></path><path d="M147.2 186.3 L147.4 188.8 L148.5 191.3 L149.3 193.7 L149.6 196.4 L152.3 198.6 L156.7 201.5 L160.3 205.1 L162.1 207.6 L166.7 211.3 L169.8 213.3 L170.5 216.0 L172.1 218.5 L171.3 221.0 L171.5 223.5 L173.3 225.5 L176.6 228.1" stroke="#e8fbff" stroke-width="1.2" stroke-opacity="0.9" vector-effect="non-scaling-stroke"></path></svg>
+    <span aria-hidden="true" class="spark big t3" style="left: 64%; top: 14%; rotate: 14deg; animation-delay: 0s;"></span>
+    <span aria-hidden="true" class="spark small t2 pk" style="left: 74%; top: 26%; rotate: -28deg; animation-delay: 1.1s;"></span>
+    <span aria-hidden="true" class="spark t4 gr" style="left: 88%; top: 18%; rotate: 38deg; animation-delay: 2.2s;"></span>
+    <span aria-hidden="true" class="spark small" style="left: 57%; top: 34%; rotate: 8deg; animation-delay: 0.6s;"></span>
+    <span aria-hidden="true" class="spark big t2 pk" style="left: 93%; top: 38%; rotate: -12deg; animation-delay: 1.7s;"></span>
+    <span aria-hidden="true" class="spark small t3" style="left: 81%; top: 46%; rotate: 52deg; animation-delay: 2.7s;"></span>
+    <span aria-hidden="true" class="spark small t4" style="left: 69%; top: 8%; rotate: -40deg; animation-delay: 3.3s;"></span>
+    <span aria-hidden="true" class="spark t3" style="left: 97%; top: 10%; rotate: 22deg; animation-delay: 0.3s;"></span>
+    <div aria-hidden="true" class="spot"></div>
+    <div class="hero-grid" style="position: relative; max-width: 1240px; margin: 0 auto; padding: 160px 24px 120px; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 56px; align-items: center;">
+      <div style="display: flex; flex-direction: column; gap: 24px;">
+        <p style="margin: 0; display: inline-flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.08em; color: #00ffff; text-transform: uppercase;"><span style="width: 8px; height: 8px; background: #39ff14; box-shadow: 0 0 10px #39ff14;"></span>Cybersécurité</p>
+        <h1 style="margin: 0; font-size: clamp(2.6rem, 5.4vw, 4.6rem); line-height: 1.02; letter-spacing: -0.02em; font-weight: 700;">Une image d'abord.<br><span style="display: inline-block; background: linear-gradient(90deg, #00ffff, #ff00ff); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,0.6); filter: drop-shadow(0 0 1px rgba(2,5,12,1)) drop-shadow(0 2px 6px rgba(2,5,12,0.95)) drop-shadow(0 0 18px rgba(255,0,255,0.35));">Le jargon ensuite.</span></h1>
+        <p style="margin: 0; max-width: 54ch; font-size: 19px; line-height: 1.55; color: #c8d6ea;">La Clique t'apprend la cybersécurité avec des images de la vie de tous les jours, puis te fait pratiquer sur un ordinateur virtuel où rien ne peut se casser.</p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px;">
+          <a href="./cours.html" class="btn-glow sheen edge" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 26px; border-radius: 999px; background: linear-gradient(90deg, #00ffff, #8338ec, #00ffff); color: #02121c; font-weight: 700; text-decoration: none; font-size: 16px;">Commencer L'Alphabet — gratuit
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"></path></svg></a>
+          <a href="#parcours" class="btn-glow" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 24px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.28); color: #e6f1ff; text-decoration: none; font-size: 16px;">Voir les parcours</a>
+        </div>
+      </div>
+
+      <div class="hide-sm float" style="position: relative;">
+        <div class="cut" style="background: linear-gradient(160deg, rgba(150,210,255,0.8), rgba(0,52,255,0.3) 42%, rgba(131,56,236,0.6)); padding: 1px;">
+          <div class="cut" style="background: rgba(4,10,26,0.72); backdrop-filter: blur(10px); padding: 26px 26px 28px; display: flex; flex-direction: column; gap: 14px;">
+            <p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: #00ffff; text-shadow: 0 0 14px rgba(0,255,255,0.6);">MISSION 1 · DÉFI 1</p>
+            <p style="margin: 0; font-size: 22px; font-weight: 700; line-height: 1.2;">Un mot de passe qu'un robot ne trouvera pas</p>
+            <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 6px; font-size: 14px;">
+              <div style="display: flex; justify-content: space-between; gap: 10px; padding: 10px 12px; border: 1px solid rgba(57,255,20,0.45); background: rgba(57,255,20,0.07);"><span>1. Mots de passe courants</span><span style="color: #39ff14;">Absent</span></div>
+              <div style="display: flex; justify-content: space-between; gap: 10px; padding: 10px 12px; border: 1px solid rgba(57,255,20,0.45); background: rgba(57,255,20,0.07);"><span>2. Infos personnelles</span><span style="color: #39ff14;">Rien trouvé</span></div>
+              <div class="trying" style="display: flex; justify-content: space-between; gap: 10px; padding: 10px 12px; border: 1px solid #c6ff33;"><span>3. Dictionnaire avec substituts</span><span style="color: #c6ff33;">Essai en cours…</span></div>
+              <div style="display: flex; justify-content: space-between; gap: 10px; padding: 10px 12px; border: 1px solid rgba(255,255,255,0.1);"><span>4. Force brute</span><span style="color: #93a8c6;">En attente</span></div>
+            </div>
+            <div style="height: 6px; background: rgba(255,255,255,0.1); margin-top: 6px;"><div class="grow" style="width: 50%; height: 100%; background: linear-gradient(90deg, #00ffff, #8338ec); box-shadow: 0 0 12px rgba(0,255,255,0.7);"></div></div>
+          </div>
+        </div>
+        <div aria-hidden="true" style="position: absolute; left: -12px; top: 14%; display: flex; flex-direction: column; gap: 22px;">
+          <span style="width: 9px; height: 34px; border-left: 2px solid #39ff14; border-top: 2px solid #39ff14; transform: skewY(-35deg);"></span>
+          <span style="width: 9px; height: 34px; border-left: 2px solid #00ffff; border-top: 2px solid #00ffff; transform: skewY(-35deg);"></span>
+          <span style="width: 9px; height: 34px; border-left: 2px solid #8338ec; border-top: 2px solid #8338ec; transform: skewY(-35deg);"></span>
+        </div>
+      </div>
+    </div>
+    <div class="qc-stamp" style="position: absolute; right: 28px; bottom: 26px; z-index: 2; width: 150px;">
+      <span class="qc-ring" aria-hidden="true"></span>
+      <svg viewBox="0 0 300 196" xmlns="http://www.w3.org/2000/svg" style="display: block; width: 100%; height: auto; filter: drop-shadow(0 8px 18px rgba(0,0,0,0.55));" role="img" aria-label="100 % québécois — Fabriqué au Québec">
+  <defs>
+    <mask id="qcPerf">
+      <rect width="300" height="196" fill="#fff"></rect>
+      <g fill="#000">
+        <circle cx="0" cy="0" r="5"></circle>
+        <circle cx="12" cy="0" r="4.2"></circle><circle cx="28" cy="0" r="4.2"></circle><circle cx="44" cy="0" r="4.2"></circle><circle cx="60" cy="0" r="4.2"></circle><circle cx="76" cy="0" r="4.2"></circle><circle cx="92" cy="0" r="4.2"></circle><circle cx="108" cy="0" r="4.2"></circle><circle cx="124" cy="0" r="4.2"></circle><circle cx="140" cy="0" r="4.2"></circle><circle cx="156" cy="0" r="4.2"></circle><circle cx="172" cy="0" r="4.2"></circle><circle cx="188" cy="0" r="4.2"></circle><circle cx="204" cy="0" r="4.2"></circle><circle cx="220" cy="0" r="4.2"></circle><circle cx="236" cy="0" r="4.2"></circle><circle cx="252" cy="0" r="4.2"></circle><circle cx="268" cy="0" r="4.2"></circle><circle cx="284" cy="0" r="4.2"></circle>
+        <circle cx="12" cy="196" r="4.2"></circle><circle cx="28" cy="196" r="4.2"></circle><circle cx="44" cy="196" r="4.2"></circle><circle cx="60" cy="196" r="4.2"></circle><circle cx="76" cy="196" r="4.2"></circle><circle cx="92" cy="196" r="4.2"></circle><circle cx="108" cy="196" r="4.2"></circle><circle cx="124" cy="196" r="4.2"></circle><circle cx="140" cy="196" r="4.2"></circle><circle cx="156" cy="196" r="4.2"></circle><circle cx="172" cy="196" r="4.2"></circle><circle cx="188" cy="196" r="4.2"></circle><circle cx="204" cy="196" r="4.2"></circle><circle cx="220" cy="196" r="4.2"></circle><circle cx="236" cy="196" r="4.2"></circle><circle cx="252" cy="196" r="4.2"></circle><circle cx="268" cy="196" r="4.2"></circle><circle cx="284" cy="196" r="4.2"></circle>
+        <circle cx="0" cy="12" r="4.2"></circle><circle cx="0" cy="28" r="4.2"></circle><circle cx="0" cy="44" r="4.2"></circle><circle cx="0" cy="60" r="4.2"></circle><circle cx="0" cy="76" r="4.2"></circle><circle cx="0" cy="92" r="4.2"></circle><circle cx="0" cy="108" r="4.2"></circle><circle cx="0" cy="124" r="4.2"></circle><circle cx="0" cy="140" r="4.2"></circle><circle cx="0" cy="156" r="4.2"></circle><circle cx="0" cy="172" r="4.2"></circle><circle cx="0" cy="188" r="4.2"></circle>
+        <circle cx="300" cy="12" r="4.2"></circle><circle cx="300" cy="28" r="4.2"></circle><circle cx="300" cy="44" r="4.2"></circle><circle cx="300" cy="60" r="4.2"></circle><circle cx="300" cy="76" r="4.2"></circle><circle cx="300" cy="92" r="4.2"></circle><circle cx="300" cy="108" r="4.2"></circle><circle cx="300" cy="124" r="4.2"></circle><circle cx="300" cy="140" r="4.2"></circle><circle cx="300" cy="156" r="4.2"></circle><circle cx="300" cy="172" r="4.2"></circle><circle cx="300" cy="188" r="4.2"></circle>
+        <circle cx="300" cy="0" r="5"></circle><circle cx="0" cy="196" r="5"></circle><circle cx="300" cy="196" r="5"></circle>
+      </g>
+    </mask>
+    <linearGradient id="qcBlue" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a4bb0"></stop>
+      <stop offset="1" stop-color="#1c3488"></stop>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="196" fill="url(#qcBlue)" mask="url(#qcPerf)"></rect>
+  <rect x="14" y="14" width="272" height="168" fill="none" stroke="#ffffff" stroke-opacity="0.18" stroke-width="1"></rect>
+  <line x1="30" y1="30" x2="270" y2="30" stroke="#8fb4ff" stroke-width="2"></line>
+  <line x1="30" y1="140" x2="270" y2="140" stroke="#8fb4ff" stroke-width="2"></line>
+  <g transform="translate(-37.5 18.5) scale(0.92)" fill="#f2f6ff">
+    <path d="M149.5,93.1c1.6-2.4 1.5-7.6-1.7-9.5-2.5-1.2-5.2-.7-6.5,.3-2.1,1.3-4.1,5.3-4.1,9.4l7.2,0 0,8.1-15,0c.2,4.1 2.5,7.5 6.7,9.3-.5,1.7-3.1,5.3-6.6,5.1-.7,3.8-1.3,5.9-4.5,9.3-3.1-3.4-3.8-5.5-4.5-9.3-3.5,.2-6-3.3-6.6-5.1 4.2-1.8 6.5-5.2 6.7-9.3l-15,0v-8.1l7.2,0c0-4.1-2-8.1-4.1-9.4-1.3-1.1-4.1-1.5-6.5-.3-3.2,1.8-3.4,7.1-1.7,9.5-15.2-2.8-13.7-17.5-8.5-22.8 4.2-4.3 8.7-5 12.3-3.6 8,2.9 13.4,12.4 13.6,26.7h4.2c0-13-2.3-17.1-8.1-33.4-3-7.7-1.2-17.2 4.1-25.9 1.9-3.1 4.3-6 7-9 2.7,3 5.1,5.9 7,9 5.3,8.8 7.1,18.3 4.1,25.9-5.9,16.3-8.1,20.4-8.1,33.4h4.2c.3-14.2 5.6-23.8 13.6-26.7 3.5-1.4 8.1-.7 12.3,3.6 5.2,5.3 6.7,20-8.5,22.8z"></path>
+  </g>
+  <text x="140" y="80" fill="#f2f6ff" font-family="Oswald, 'Arial Narrow', sans-serif" font-weight="600" font-size="40" letter-spacing="1">100 %</text>
+  <text x="140" y="124" fill="#f2f6ff" font-family="Oswald, 'Arial Narrow', sans-serif" font-weight="600" font-size="38" letter-spacing="0.5" textLength="132" lengthAdjust="spacingAndGlyphs">QUÉBÉCOIS</text>
+  <text x="150" y="166" text-anchor="middle" fill="#f2f6ff" font-family="Oswald, 'Arial Narrow', sans-serif" font-weight="500" font-size="17" letter-spacing="3.2">FABRIQUÉ AU QUÉBEC</text>
+</svg>
+    </div>
+  </section>
+
+  <!-- Écran de connexion : s'ouvre en cercle à partir du bouton « Se connecter » -->
+  <div id="auth" class="auth" role="dialog" aria-modal="true" aria-labelledby="authTitle" aria-hidden="true" inert>
+    <div aria-hidden="true" style="position: fixed; inset: 0; pointer-events: none; overflow: hidden;">
+      <div class="beam" style="position: absolute; left: -45%; top: 18%; width: 130%; height: 52%; background: radial-gradient(closest-side, rgba(70,150,255,0.62), rgba(25,120,255,0.2) 45%, transparent 75%); filter: blur(34px);"></div>
+      <div class="beam2" style="position: absolute; right: -30%; top: -20%; width: 90%; height: 45%; background: radial-gradient(closest-side, rgba(0,255,255,0.18), transparent 70%); filter: blur(30px);"></div>
+    </div>
+    <div style="position: relative; z-index: 1; max-width: 440px; margin: 0 auto; min-height: 100%; box-sizing: border-box; padding: 16px 20px 24px; display: flex; flex-direction: column; gap: 14px;">
+
+      <div class="stg d1" style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+        <button type="button" id="authClose" aria-label="Retour à l'accueil" class="glass-btn" style="width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; color: #e6f1ff; cursor: pointer;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"></path></svg>
+        </button>
+        <div id="authTabs" class="auth-tabs" role="tablist" aria-label="Connexion ou inscription"><button type="button" role="tab" id="tabLogin" aria-selected="true" class="on">Se connecter</button><button type="button" role="tab" id="tabSignup" aria-selected="false">Créer un compte</button></div>
+        <span id="authTop" hidden style="font-size: 16px; color: #dfe9f7;"></span>
+        <span aria-hidden="true" class="glass-btn" style="width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center;">
+          <svg width="20" height="20" viewBox="0 0 28 28" fill="none" stroke="#00ffff" stroke-width="1.6" stroke-linejoin="round"><path d="M14 2.5 4 6.5v7c0 6 4.2 10 10 12 5.8-2 10-6 10-12v-7L14 2.5Z"></path><path d="m15.5 8.5-4 6.5h4l-1.5 5 4.5-7h-4l1-4.5Z" fill="#00ffff" stroke="none"></path></svg>
+        </span>
+      </div>
+
+      <div style="flex: 1; display: grid;">
+
+        <section id="viewLogin" class="view" aria-hidden="false" style="grid-area: 1 / 1; display: flex; flex-direction: column; gap: 12px;">
+          <div class="stg d2" style="text-align: center; margin-top: 4px;">
+            <h2 id="authTitle" style="margin: 0; font-size: 24px; font-weight: 500; letter-spacing: -0.01em; display: inline-flex; align-items: center; gap: 10px;">Connecte-toi à ton compte
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e6f1ff" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M10 3c.6 3.8 2.2 5.4 6 6-3.8.6-5.4 2.2-6 6-.6-3.8-2.2-5.4-6-6 3.8-.6 5.4-2.2 6-6Z"></path><path d="M18 13c.3 1.8 1 2.6 2.8 2.9-1.8.3-2.5 1-2.8 2.9-.3-1.9-1-2.6-2.9-2.9 1.9-.3 2.6-1.1 2.9-2.9Z"></path></svg></h2>
+            <p style="margin: 8px 0 0; font-size: 15px; color: #a9bad2;">Content de te revoir! Entre tes infos pour continuer.</p>
+          </div>
+          <div class="stg d3" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 6px;">
+            <button type="button" data-fournisseur="google" class="glass-btn" style="min-height: 46px; border-radius: 999px; font: inherit; font-size: 16px; color: #e6f1ff; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 10px;"><img src="./assets/brand/google.png" alt="" width="20" height="20" style="display: block; width: 20px; height: 20px;">Google</button>
+            <button type="button" data-fournisseur="facebook" class="glass-btn" style="min-height: 46px; border-radius: 999px; font: inherit; font-size: 16px; color: #e6f1ff; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 10px;"><img src="./assets/brand/facebook.png" alt="" width="20" height="20" style="display: block; width: 20px; height: 20px;">Facebook</button>
+          </div>
+          <p class="stg d4" style="margin: 0; text-align: center; font-size: 14px; color: #93a8c6;">Ou continue avec ton courriel</p>
+          <form id="loginForm" class="stg d5" style="display: flex; flex-direction: column; gap: 12px;">
+            <label class="glass-field" style="display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 18px; border-radius: 999px;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e6f1ff" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"></rect><path d="m4 7 8 6 8-6"></path></svg>
+              <span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0);">Courriel</span>
+              <input id="authEmail" name="courriel" type="email" required autocomplete="email" placeholder="ton@courriel.com" style="flex: 1; min-width: 0; font: inherit; font-size: 16px; color: #e6f1ff; background: transparent; border: 0; outline: none;">
+            </label>
+            <label class="glass-field" style="display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 18px; border-radius: 999px;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e6f1ff" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="3"></rect><path d="M8 10V7.5a4 4 0 0 1 8 0V10"></path><path d="M12 14v2.2"></path></svg>
+              <span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0);">Mot de passe</span>
+              <input id="authPw" name="motdepasse" type="password" required autocomplete="current-password" placeholder="Ton mot de passe" style="flex: 1; min-width: 0; font: inherit; font-size: 16px; color: #e6f1ff; background: transparent; border: 0; outline: none;">
+            </label>
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 14px; margin-top: 2px;">
+              <label style="display: inline-flex; align-items: center; gap: 8px; color: #c8d6ea; min-height: 44px; cursor: pointer;"><input type="checkbox" style="width: 18px; height: 18px; accent-color: #00ffff; margin: 0;">Se souvenir de moi</label>
+              <button type="button" id="forgotPw" class="link-btn" style="color: #5ec8ff; text-decoration: none;">Mot de passe oublié?</button>
+            </div>
+            <p class="auth-msg" id="loginMsg" role="status" aria-live="polite"></p>
+            <button type="submit" class="login-btn" style="min-height: 50px; margin-top: 2px; border: 0; border-radius: 999px; font: inherit; font-size: 17px; font-weight: 600; color: #04122a; cursor: pointer;">Se connecter</button>
+          </form>
+        </section>
+
+        <section id="viewSignup" class="view off-right" aria-hidden="true" inert style="grid-area: 1 / 1; display: flex; flex-direction: column; gap: 12px;">
+          <div class="stg d2" style="text-align: center; margin-top: 4px;">
+            <h2 id="signupTitle" style="margin: 0; font-size: 24px; font-weight: 500; letter-spacing: -0.01em; display: inline-flex; align-items: center; gap: 10px;">Crée ton compte
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e6f1ff" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M10 3c.6 3.8 2.2 5.4 6 6-3.8.6-5.4 2.2-6 6-.6-3.8-2.2-5.4-6-6 3.8-.6 5.4-2.2 6-6Z"></path><path d="M18 13c.3 1.8 1 2.6 2.8 2.9-1.8.3-2.5 1-2.8 2.9-.3-1.9-1-2.6-2.9-2.9 1.9-.3 2.6-1.1 2.9-2.9Z"></path></svg></h2>
+            <p style="margin: 8px 0 0; font-size: 15px; color: #a9bad2;">C'est gratuit. L'Alphabet t'attend.</p>
+          </div>
+          <div class="stg d3" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 6px;">
+            <button type="button" data-fournisseur="google" class="glass-btn" style="min-height: 46px; border-radius: 999px; font: inherit; font-size: 16px; color: #e6f1ff; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 10px;"><img src="./assets/brand/google.png" alt="" width="20" height="20" style="display: block; width: 20px; height: 20px;">Google</button>
+            <button type="button" data-fournisseur="facebook" class="glass-btn" style="min-height: 46px; border-radius: 999px; font: inherit; font-size: 16px; color: #e6f1ff; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 10px;"><img src="./assets/brand/facebook.png" alt="" width="20" height="20" style="display: block; width: 20px; height: 20px;">Facebook</button>
+          </div>
+          <p class="stg d4" style="margin: 0; text-align: center; font-size: 14px; color: #93a8c6;">Ou inscris-toi avec ton courriel</p>
+          <form id="signupForm" class="stg d5" style="display: flex; flex-direction: column; gap: 12px;">
+            <label class="glass-field" style="display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 18px; border-radius: 999px;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e6f1ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8.5" r="3.8"></circle><path d="M4.5 20c.8-3.8 3.8-6 7.5-6s6.7 2.2 7.5 6"></path></svg>
+              <span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0);">Prénom</span>
+              <input id="signupName" name="prenom" type="text" required autocomplete="given-name" placeholder="Ton prénom" style="flex: 1; min-width: 0; font: inherit; font-size: 16px; color: #e6f1ff; background: transparent; border: 0; outline: none;">
+            </label>
+            <label class="glass-field" style="display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 18px; border-radius: 999px;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e6f1ff" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"></rect><path d="m4 7 8 6 8-6"></path></svg>
+              <span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0);">Courriel</span>
+              <input id="signupEmail" name="courriel" type="email" required autocomplete="email" placeholder="ton@courriel.com" style="flex: 1; min-width: 0; font: inherit; font-size: 16px; color: #e6f1ff; background: transparent; border: 0; outline: none;">
+            </label>
+            <label class="glass-field" style="display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 18px; border-radius: 999px;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e6f1ff" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="3"></rect><path d="M8 10V7.5a4 4 0 0 1 8 0V10"></path><path d="M12 14v2.2"></path></svg>
+              <span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0);">Mot de passe</span>
+              <input id="signupPw" name="motdepasse" type="password" required minlength="8" autocomplete="new-password" placeholder="Choisis un mot de passe" aria-describedby="pwHint" style="flex: 1; min-width: 0; font: inherit; font-size: 16px; color: #e6f1ff; background: transparent; border: 0; outline: none;">
+            </label>
+            <div aria-hidden="true" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; padding: 0 6px;">
+              <span class="seg"></span><span class="seg"></span><span class="seg"></span><span class="seg"></span>
+            </div>
+            <p id="pwHint" aria-live="polite" style="margin: -2px 6px 0; font-size: 13px; color: #93a8c6;"><b id="pwLabel" class="pw0">Ton mot de passe</b> · 12 caractères et plus, idéalement une phrase.</p>
+            <label style="display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #c8d6ea; line-height: 1.45; padding: 4px 2px; cursor: pointer;"><input type="checkbox" required="" style="flex: 0 0 auto; width: 18px; height: 18px; margin: 2px 0 0; accent-color: #00ffff;"><span>J'accepte les <a href="#" style="color: #5ec8ff;">conditions d'utilisation</a> et la <a href="#" style="color: #5ec8ff;">politique de confidentialité</a>.</span></label>
+            <label style="display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #c8d6ea; line-height: 1.45; padding: 0 2px 4px; cursor: pointer;"><input type="checkbox" name="infolettre" value="oui" style="flex: 0 0 auto; width: 18px; height: 18px; margin: 2px 0 0; accent-color: #00ffff;"><span>Je veux recevoir l’infolettre de La Clique (nouveaux cours, promos). Désabonnement en tout temps.</span></label>
+            <p class="auth-msg" id="signupMsg" role="status" aria-live="polite"></p>
+            <button type="submit" class="login-btn" style="min-height: 50px; margin-top: 0; border: 0; border-radius: 999px; font: inherit; font-size: 17px; font-weight: 600; color: #04122a; cursor: pointer;">Créer mon compte</button>
+          </form>
+        </section>
+
+        <section id="viewCompte" class="view off-right" aria-hidden="true" inert style="grid-area: 1 / 1; display: flex; flex-direction: column; gap: 12px;">
+          <div class="stg d2" style="text-align: center; margin-top: 4px;">
+            <h2 id="compteTitle" style="margin: 0; font-size: 24px; font-weight: 500; letter-spacing: -0.01em;">Salut <span id="comptePrenom"></span>!</h2>
+            <p id="compteCourriel" style="margin: 8px 0 0; font-size: 15px; color: #a9bad2;"></p>
+          </div>
+          <p class="auth-msg" id="compteMsg" role="status" aria-live="polite"></p>
+          <div class="stg d3" style="display: flex; flex-direction: column; gap: 12px; margin-top: 6px;">
+            <a href="./cours.html" class="login-btn" style="display: grid; place-items: center; min-height: 54px; border-radius: 999px; font-size: 17px; font-weight: 600; color: #04122a; text-decoration: none;">Continuer mes cours</a>
+            <button type="button" id="btnDeconnexion" class="glass-btn" style="min-height: 52px; border-radius: 999px; font: inherit; font-size: 16px; color: #e6f1ff; cursor: pointer;">Se déconnecter</button>
+          </div>
+          <p class="stg d4" style="margin: auto 0 0; padding-top: 24px; text-align: center; font-size: 13px; color: #93a8c6;">Pour l’instant, ta progression dans les cours reste gardée sur cet appareil.</p>
+        </section>
+
+        <section id="viewNouveau" class="view off-right" aria-hidden="true" inert style="grid-area: 1 / 1; display: flex; flex-direction: column; gap: 12px;">
+          <div class="stg d2" style="text-align: center; margin-top: 4px;">
+            <h2 id="nouveauTitle" style="margin: 0; font-size: 24px; font-weight: 500; letter-spacing: -0.01em;">Choisis ton nouveau mot de passe</h2>
+            <p style="margin: 8px 0 0; font-size: 15px; color: #a9bad2;">Une phrase de passe, c’est le plus solide.</p>
+          </div>
+          <form id="nouveauForm" class="stg d3" style="display: flex; flex-direction: column; gap: 12px;">
+            <label class="glass-field" style="display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 18px; border-radius: 999px;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e6f1ff" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="3"></rect><path d="M8 10V7.5a4 4 0 0 1 8 0V10"></path><path d="M12 14v2.2"></path></svg>
+              <span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0);">Nouveau mot de passe</span>
+              <input id="nouveauPw" name="motdepasse" type="password" required autocomplete="new-password" placeholder="Ton nouveau mot de passe" style="flex: 1; min-width: 0; font: inherit; font-size: 16px; color: #e6f1ff; background: transparent; border: 0; outline: none;">
+            </label>
+            <p class="auth-msg" id="nouveauMsg" role="status" aria-live="polite"></p>
+            <button type="submit" class="login-btn" style="min-height: 54px; border: 0; border-radius: 999px; font: inherit; font-size: 17px; font-weight: 600; color: #04122a; cursor: pointer;">Enregistrer</button>
+          </form>
+        </section>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Les écrans « en savoir plus » : s'ouvrent par-dessus l'accueil (la page d'accueil = un seul écran) -->
+<div id="ecrans" class="ecrans" role="dialog" aria-modal="true" aria-label="La Clique : en savoir plus" aria-hidden="true" inert>
+  <div class="ecrans-barre">
+    <button type="button" class="ecrans-retour" id="ecransRetour" aria-label="Retour à l'accueil"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M13 8H3M7 4 3 8l4 4"/></svg></button>
+    <nav class="ecrans-onglets" aria-label="Sections">
+      <a href="#methode" data-ecran="methode">La méthode</a>
+      <a href="#parcours" data-ecran="parcours">Les parcours</a>
+      <a href="#ordi" data-ecran="ordi">L'ordinateur virtuel</a>
+      <a href="#clic" data-ecran="clic">Clic</a>
+      <a href="#contact" data-ecran="contact">Contact</a>
+    </nav>
+  </div>
+  <div class="ecrans-corps" id="ecransCorps">
+      <section id="methode" style="max-width: 1240px; margin: 0 auto; padding: 104px 24px 40px;">
+        <p style="margin: 0 0 14px; font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.1em; color: #00ffff; text-shadow: 0 0 14px rgba(0,255,255,0.6);">01 — LA MÉTHODE</p>
+        <h2 style="margin: 0 0 48px; font-size: clamp(2rem, 3.4vw, 3rem); line-height: 1.08; letter-spacing: -0.015em; max-width: 20ch;">Rentrer dans la matière comme dans du beurre.</h2>
+        <ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: rgba(0,255,255,0.18); border: 1px solid rgba(0,255,255,0.18);">
+          <li class="cell" style="background: #050a14; padding: 28px 24px 30px; display: flex; flex-direction: column; gap: 12px;">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #00ffff; text-shadow: 0 0 12px #00ffff;">01</span>
+            <span style="font-size: 21px; font-weight: 700;">L'analogie</span>
+            <span style="color: #a9bad2; line-height: 1.5; font-size: 15px;">Une image de la vie de tous les jours. Un mot de passe, c'est une clé.</span>
+          </li>
+          <li class="cell" style="background: #050a14; padding: 28px 24px 30px; display: flex; flex-direction: column; gap: 12px;">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #39ff14; text-shadow: 0 0 12px #39ff14;">02</span>
+            <span style="font-size: 21px; font-weight: 700;">Le schéma</span>
+            <span style="color: #a9bad2; line-height: 1.5; font-size: 15px;">On voit comment ça marche avant de lire un seul mot technique.</span>
+          </li>
+          <li class="cell" style="background: #050a14; padding: 28px 24px 30px; display: flex; flex-direction: column; gap: 12px;">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #ff00ff; text-shadow: 0 0 12px #ff00ff;">03</span>
+            <span style="font-size: 21px; font-weight: 700;">Le vrai terme</span>
+            <span style="color: #a9bad2; line-height: 1.5; font-size: 15px;">Le mot du métier arrive quand tu as déjà compris l'idée.</span>
+          </li>
+          <li class="cell" style="background: #050a14; padding: 28px 24px 30px; display: flex; flex-direction: column; gap: 12px;">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #c6ff33; text-shadow: 0 0 12px #c6ff33;">04</span>
+            <span style="font-size: 21px; font-weight: 700;">La mission</span>
+            <span style="color: #a9bad2; line-height: 1.5; font-size: 15px;">Tu le fais pour vrai sur l'ordinateur virtuel. Sans corrigé : c'est toi qui montres ce que tu sais.</span>
+          </li>
+        </ol>
+      </section>
+
+      <section id="parcours" style="max-width: 1240px; margin: 0 auto; padding: 88px 24px 40px;">
+        <p style="margin: 0 0 14px; font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.1em; color: #39ff14; text-shadow: 0 0 14px rgba(57,255,20,0.6);">02 — LES PARCOURS</p>
+        <h2 style="margin: 0 0 18px; font-size: clamp(2rem, 3.4vw, 3rem); line-height: 1.08; letter-spacing: -0.015em; max-width: 22ch;">Une base gratuite. Puis le métier que tu veux.</h2>
+        <p style="margin: 0 0 44px; max-width: 62ch; color: #a9bad2; font-size: 17px; line-height: 1.6;">Une formation sur mesure : tu apprends ce dont ton futur métier a vraiment besoin, pas un peu de tout. Tu veux aller plus loin ? Les autres parcours se font en complément, après.</p>
+
+        <article class="cutsm lift" style="background: linear-gradient(120deg, rgba(0,255,255,0.12), rgba(131,56,236,0.10) 60%, rgba(8,18,36,0.9)); border-top: 2px solid #00ffff; padding: 30px 28px 32px; display: flex; flex-wrap: wrap; gap: 28px; align-items: center; margin-bottom: 20px;">
+          <div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 12px;">
+            <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #00ffff;">ÉTAPE 1 · POUR TOUT LE MONDE</span><span style="font-size: 13px; padding: 4px 12px; border-radius: 999px; background: rgba(57,255,20,0.12); color: #39ff14; border: 1px solid rgba(57,255,20,0.4);">Gratuit</span></div>
+            <h3 style="margin: 0; font-size: 28px;">La base</h3>
+            <p style="margin: 0; color: #a9bad2; line-height: 1.55; font-size: 15px; max-width: 52ch;">Ce que les trois métiers ont en commun, expliqué simplement. Parfait pour essayer la méthode avant de choisir ta voie.</p>
+          </div>
+          <div style="flex: 1 1 340px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px;">
+            <a href="./cours.html" style="display: flex; flex-direction: column; gap: 6px; padding: 16px 18px; border: 1px solid rgba(0,255,255,0.35); background: rgba(2,5,12,0.5); color: #e6f1ff; text-decoration: none;"><b style="font-size: 18px;">L'Alphabet</b><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #93a8c6;">14 défis · 14 missions</span></a>
+            <a href="./cours.html?c=algebre" style="display: flex; flex-direction: column; gap: 6px; padding: 16px 18px; border: 1px solid rgba(131,56,236,0.5); background: rgba(2,5,12,0.5); color: #e6f1ff; text-decoration: none;"><b style="font-size: 18px;">La Cyber-Algèbre</b><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #93a8c6;">13 défis · 13 missions</span></a>
+          </div>
+        </article>
+
+        <p style="margin: 36px 0 16px; font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.1em; color: #c8d6ea;">ÉTAPE 2 · CHOISIS TON MÉTIER</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+          <article class="cutsm lift" style="background: linear-gradient(180deg, rgba(255,0,255,0.12), rgba(8,18,36,0.9)); border-top: 2px solid #ff00ff; padding: 30px 28px 32px; display: flex; flex-direction: column; gap: 14px;">
+            <div style="display: flex; justify-content: space-between; align-items: center;"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #ff66ff;">ATTAQUE</span><span style="font-size: 13px; padding: 4px 12px; border-radius: 999px; color: #c8d6ea; border: 1px solid rgba(255,255,255,0.22);">Bientôt</span></div>
+            <h3 style="margin: 0; font-size: 28px;">Pentester</h3>
+            <p style="margin: 0; color: #a9bad2; line-height: 1.55; font-size: 15px;">Tu attaques, avec permission, pour trouver les failles avant les vrais pirates.</p>
+          </article>
+          <article class="cutsm lift" style="background: linear-gradient(180deg, rgba(57,255,20,0.10), rgba(8,18,36,0.9)); border-top: 2px solid #39ff14; padding: 30px 28px 32px; display: flex; flex-direction: column; gap: 14px;">
+            <div style="display: flex; justify-content: space-between; align-items: center;"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #39ff14;">DÉFENSE</span><span style="font-size: 13px; padding: 4px 12px; border-radius: 999px; color: #c8d6ea; border: 1px solid rgba(255,255,255,0.22);">Bientôt</span></div>
+            <h3 style="margin: 0; font-size: 28px;">Analyste SOC</h3>
+            <p style="margin: 0; color: #a9bad2; line-height: 1.55; font-size: 15px;">Tu surveilles, tu repères les attaques et tu réagis avant qu'elles fassent des dégâts.</p>
+          </article>
+          <article class="cutsm lift" style="background: linear-gradient(180deg, rgba(131,56,236,0.14), rgba(8,18,36,0.9)); border-top: 2px solid #8338ec; padding: 30px 28px 32px; display: flex; flex-direction: column; gap: 14px;">
+            <div style="display: flex; justify-content: space-between; align-items: center;"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #b48cff;">ENQUÊTE</span><span style="font-size: 13px; padding: 4px 12px; border-radius: 999px; color: #c8d6ea; border: 1px solid rgba(255,255,255,0.22);">Bientôt</span></div>
+            <h3 style="margin: 0; font-size: 28px;">Investigateur OSINT</h3>
+            <p style="margin: 0; color: #a9bad2; line-height: 1.55; font-size: 15px;">Tu enquêtes à partir d'informations publiques pour découvrir qui est derrière quoi.</p>
+          </article>
+        </div>
+        <p style="margin: 20px 0 0; font-size: 15px; color: #93a8c6;">D'autres métiers vont s'ajouter.</p>
+      </section>
+
+      <section id="ordi" style="max-width: 1240px; margin: 0 auto; padding: 88px 24px 40px;">
+        <div style="display: flex; flex-wrap: wrap; gap: 48px; align-items: center;">
+          <div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 18px;">
+            <p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.1em; color: #ff00ff; text-shadow: 0 0 14px rgba(255,0,255,0.6);">03 — L'ORDINATEUR VIRTUEL</p>
+            <h2 style="margin: 0; font-size: clamp(2rem, 3.4vw, 3rem); line-height: 1.08; letter-spacing: -0.015em;">Un vrai faux ordinateur. Rien ne peut s'y casser.</h2>
+            <p style="margin: 0; color: #a9bad2; font-size: 17px; line-height: 1.6; max-width: 48ch;">Chaque mission se fait sur un ordinateur qui ressemble à celui que tu connais : courriel, navigateur, explorateur de fichiers, gestionnaire de mots de passe. Tu pratiques pour vrai, sans risque.</p>
+          </div>
+          <div class="lift2" style="flex: 1 1 520px; min-width: 0; border: 1px solid rgba(0,255,255,0.24); border-radius: 14px; overflow: hidden; background: radial-gradient(120% 90% at 20% 5%, #1569cf 0%, #0a3b7c 40%, #061a3a 100%); box-shadow: 0 30px 80px rgba(0,0,0,0.5);">
+            <div style="display: flex; gap: 22px; padding: 26px; min-height: 300px; align-items: flex-start;">
+              <div style="display: grid; grid-template-columns: repeat(2, 72px); gap: 18px; font-size: 12px; text-align: center; color: #dbe9ff;">
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;"><span style="width: 46px; height: 46px; border-radius: 10px; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.2); display: grid; place-items: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h7l2 2h9v10H3z"></path></svg></span>Fichiers</div>
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;"><span style="width: 46px; height: 46px; border-radius: 10px; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.2); display: grid; place-items: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg></span>Courriel</div>
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;"><span style="width: 46px; height: 46px; border-radius: 10px; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.2); display: grid; place-items: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"></path></svg></span>Navigateur</div>
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;"><span style="width: 46px; height: 46px; border-radius: 10px; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.2); display: grid; place-items: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg></span>Mots de passe</div>
+              </div>
+              <div style="flex: 1; min-width: 0; background: #07101f; border: 1px solid rgba(0,255,255,0.24); border-radius: 10px; overflow: hidden; align-self: center;">
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 9px 12px; background: linear-gradient(90deg, #10203b, #16204a); font-size: 13px; color: #bdf3ff;"><span>Courriel — Boîte de réception</span><span style="display: flex; gap: 10px; color: #93a8c6;" aria-hidden="true">— ▢ ✕</span></div>
+                <div style="padding: 14px; display: flex; flex-direction: column; gap: 8px; font-size: 13px;">
+                  <div style="padding: 10px 12px; border: 1px solid #c6ff33; background: rgba(198,255,51,0.08);"><b>Votre colis est retenu</b><br><span style="color: #93a8c6;">livraison-poste-canada.co — Cliquez ici pour payer 2,99 $</span></div>
+                  <div style="padding: 10px 12px; border: 1px solid rgba(255,255,255,0.1);"><b>Horaire de la semaine</b><br><span style="color: #93a8c6;">Julie, de l'équipe</span></div>
+                </div>
+              </div>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 9px 16px; background: rgba(3,10,22,0.85); border-top: 1px solid rgba(255,255,255,0.1); font-size: 13px; color: #93a8c6;"><span>Rechercher</span><span style="padding: 3px 11px; border-radius: 999px; border: 1px solid #39ff14; color: #39ff14;">Protection active</span><span>21:14</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="clic" style="max-width: 1240px; margin: 0 auto; padding: 88px 24px 40px;">
+        <div class="cutsm" style="background: linear-gradient(120deg, rgba(0,255,255,0.1), rgba(131,56,236,0.12)); border: 1px solid rgba(0,255,255,0.2); padding: 40px; display: flex; flex-wrap: wrap; gap: 40px; align-items: center;">
+          <img src="./assets/clic/psst.webp" alt="Clic, la mascotte, qui chuchote « psst »" width="200" height="200" loading="lazy" style="flex: 0 0 200px; width: 200px; height: 200px; border-radius: 22px; border: 1px solid rgba(0,255,255,0.35); box-shadow: 0 0 40px rgba(0,255,255,0.18);">
+          <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 16px;">
+            <p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.1em; color: #c6ff33; text-shadow: 0 0 14px rgba(198,255,51,0.6);">04 — CLIC, TON ACOLYTE</p>
+            <p style="margin: 0; font-size: 26px; line-height: 1.3; font-weight: 500;">« Psst… si t'as une question, je suis juste là, sur le bord de l'écran. »</p>
+            <p style="margin: 0; color: #a9bad2; font-size: 16px; line-height: 1.6; max-width: 60ch;">Clic ne donne jamais la réponse. Il t'aide un cran à la fois : un indice, une méthode, une explication, un accompagnement étape par étape, puis un exercice de plus si tu en as besoin.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" style="max-width: 1240px; margin: 0 auto; padding: 88px 24px 72px;">
+        <div style="display: flex; flex-wrap: wrap; gap: 48px;">
+          <div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 16px;">
+            <p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.1em; color: #ff0080; text-shadow: 0 0 14px rgba(255,0,128,0.6);">05 — CONTACT</p>
+            <h2 style="margin: 0; font-size: clamp(2rem, 3.4vw, 3rem); line-height: 1.08;">Parlons de ta sécurité.</h2>
+            <p style="margin: 0; color: #a9bad2; font-size: 17px;">Une formation pour ton équipe, une question ? Écris-nous.</p>
+            <a href="mailto:gablefebvre011@gmail.com" style="font-size: 17px;">gablefebvre011@gmail.com</a>
+          </div>
+          <form id="contactForm" data-email="gablefebvre011@gmail.com" style="flex: 1 1 460px; min-width: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; padding: 28px; background: rgba(8,18,36,0.78); border: 1px solid rgba(0,255,255,0.22);" class="cutsm">
+            <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px;">Ton nom<input type="text" name="nom" required autocomplete="name" placeholder="Prénom Nom" style="font: inherit; font-size: 16px; color: #e6f1ff; background: rgba(120,150,210,0.1); border: 1px solid rgba(255,255,255,0.16); border-radius: 999px; padding: 12px 16px;"></label>
+            <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px;">Ton courriel<input type="email" name="courriel" required autocomplete="email" placeholder="toi@courriel.com" style="font: inherit; font-size: 16px; color: #e6f1ff; background: rgba(120,150,210,0.1); border: 1px solid rgba(255,255,255,0.16); border-radius: 999px; padding: 12px 16px;"></label>
+            <label style="grid-column: 1 / -1; display: flex; flex-direction: column; gap: 6px; font-size: 14px;">Ton message<textarea name="message" required rows="4" placeholder="Ce que tu aimerais faire…" style="font: inherit; font-size: 16px; color: #e6f1ff; background: rgba(120,150,210,0.1); border: 1px solid rgba(255,255,255,0.16); border-radius: 18px; padding: 12px 16px; resize: vertical;"></textarea></label>
+            <button type="submit" class="btn-glow" style="grid-column: 1 / -1; min-height: 50px; font: inherit; font-weight: 700; font-size: 16px; color: #07142e; background: #ffffff; border: 0; border-radius: 999px; cursor: pointer;">Préparer mon courriel</button>
+          </form>
+        </div>
+        <p id="contactNote" aria-live="polite" style="margin: 14px 0 0; font-size: 14px; color: #93a8c6;">Ta messagerie va s'ouvrir avec le message prêt à envoyer.</p>
+      </section>
+
+      <footer style="border-top: 1px solid rgba(0,255,255,0.14);">
+        <div style="max-width: 1240px; margin: 0 auto; padding: 26px 24px; display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; font-size: 14px; color: #93a8c6;">
+          <span>© 2026 La Clique</span>
+          <span>Attestation de réussite de La Clique — pas un diplôme officiel</span>
+          <a href="#haut">Retour à l'accueil ↑</a>
+        </div>
+      </footer>
+  </div>
+</div>
+
+<!-- Clic vivant : la mascotte, en bas à gauche de l'écran (js/clic-accueil.js) -->
+<aside class="clic-live" id="clicLive" aria-label="Clic, la mascotte de La Clique">
+  <div class="clic-bulle" id="clicBulle" role="status" aria-live="polite" hidden>
+    <p id="clicTexte"></p>
+    <button type="button" class="clic-x" id="clicX" aria-label="Fermer le message de Clic">×</button>
+  </div>
+  <button type="button" class="clic-perso" id="clicPerso" aria-label="Parler à Clic">
+    <img class="clic-base" src="./assets/cerebro.webp" alt="" width="617" height="640" draggable="false">
+    <img data-corps="salut" src="./assets/clic/corps/salut.webp" alt="" height="640" draggable="false" loading="lazy" hidden>
+    <img data-corps="psst" src="./assets/clic/corps/psst.webp" alt="" height="640" draggable="false" loading="lazy" hidden>
+    <img data-corps="montre" src="./assets/clic/corps/montre.webp" alt="" height="640" draggable="false" loading="lazy" hidden>
+    <img data-corps="fort" src="./assets/clic/corps/fort.webp" alt="" height="640" draggable="false" loading="lazy" hidden>
+    <img data-corps="notes" src="./assets/clic/corps/notes.webp" alt="" height="640" draggable="false" loading="lazy" hidden>
+    <img data-corps="loupe" src="./assets/clic/corps/loupe.webp" alt="" height="640" draggable="false" loading="lazy" hidden>
+    <img data-corps="pouce" src="./assets/clic/corps/pouce.webp" alt="" height="640" draggable="false" loading="lazy" hidden>
+    <img data-corps="reflexion" src="./assets/clic/corps/reflexion.webp" alt="" height="640" draggable="false" loading="lazy" hidden>
+    <img data-corps="cache-yeux" src="./assets/clic/corps/cache-yeux.webp" alt="" height="640" draggable="false" loading="lazy" hidden>
+    <img data-corps="saute" src="./assets/clic/corps/saute.webp" alt="" height="640" draggable="false" loading="lazy" hidden>
+    <img data-corps="lettre" src="./assets/clic/corps/lettre.webp" alt="" height="640" draggable="false" loading="lazy" hidden>
+  </button>
+</aside>
+<script src="./js/comptes.js?v=20261013"></script>
+<script src="./js/clic-phrases.js?v=20261016"></script>
+<script src="./js/clic-accueil.js?v=20261018"></script>
+<script src="./js/accueil.js?v=20261017"></script>
+</body>
+</html>

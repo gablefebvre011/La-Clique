@@ -1,0 +1,102 @@
+/* La Clique — couche de style commune aux cours, à l'ordinateur virtuel et à l'attestation.
+   Elle se charge en DERNIER et reprend le look de la maquette « La Clique — style pro » :
+   fond bleu nuit, cyan principal, néons (Neon Pulse) pour les détails, Space Grotesk + JetBrains Mono.
+   Pour changer une couleur partout : modifie les variables juste en dessous. */
+:root{
+  --cy:#00ffff;          /* cyan principal */
+  --vi:#b48cff;          /* violet lisible sur fond foncé (texte, traits) */
+  --vi-fort:#8338ec;     /* violet néon (dégradés, lueurs) */
+  --ok:#39ff14;          /* réussite */
+  --no:#ff5aa8;          /* erreur, attaque */
+  --encours:#c6ff33;     /* en cours */
+  --tx:#e6f1ff;
+  --mu:#93a8c6;
+  --line:rgba(0,255,255,.18);
+  --nuit:#050a14;
+  --carte:rgba(8,18,36,.78);
+  --mono:'JetBrains Mono',ui-monospace,Consolas,monospace;
+}
+html,body{background:var(--nuit);color:var(--tx)}
+
+/* Fond : lueurs violettes et cyan qui dérivent doucement (remplace l'ancien quadrillage) */
+body::before{
+  background:
+    radial-gradient(900px 500px at 85% -10%,rgba(131,56,236,.18),transparent),
+    radial-gradient(700px 500px at 0% 100%,rgba(0,255,255,.12),transparent);
+  -webkit-mask-image:none;mask-image:none;
+}
+body::after{content:'';position:fixed;z-index:0;pointer-events:none;right:-10%;top:-20%;width:55%;height:55%;
+  background:radial-gradient(closest-side,rgba(131,56,236,.22),transparent);animation:lc-drift 16s ease-in-out infinite}
+@keyframes lc-drift{0%,100%{transform:translate(0,0)}50%{transform:translate(-40px,18px)}}
+
+/* Étincelles néon (même effet que l'accueil) */
+.lc-decor{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+@keyframes lc-glint{0%{opacity:0;scale:.3}6%{opacity:1;scale:1.15}11%{opacity:.35;scale:.8}17%{opacity:.95;scale:1}28%,100%{opacity:0;scale:.35}}
+.lc-spark{position:absolute;width:0;height:0;box-shadow:0 0 2px 1px rgba(255,255,255,.95),0 0 9px 3px rgba(0,255,255,.55);animation:lc-glint 4.2s ease-in-out infinite}
+.lc-spark::before,.lc-spark::after{content:"";position:absolute;left:0;top:0;transform:translate(-50%,-50%);border-radius:50%}
+.lc-spark::before{width:18px;height:1.3px;background:linear-gradient(90deg,transparent,rgba(225,250,255,.95) 45%,rgba(225,250,255,.95) 55%,transparent)}
+.lc-spark::after{width:1.2px;height:11px;background:linear-gradient(transparent,rgba(225,250,255,.9) 45%,rgba(225,250,255,.9) 55%,transparent)}
+.lc-spark.big::before{width:30px}.lc-spark.big::after{height:18px}
+.lc-spark.pk{box-shadow:0 0 2px 1px rgba(255,255,255,.95),0 0 10px 3px rgba(255,0,255,.7)}
+.lc-spark.gr{box-shadow:0 0 2px 1px rgba(255,255,255,.95),0 0 10px 3px rgba(57,255,20,.65)}
+.lc-spark.t2{animation-duration:3.1s}.lc-spark.t3{animation-duration:5.6s}
+
+/* En-tête : bouclier + LA CLIQUE espacé, verre bleu nuit, filet cyan */
+.c-top{background:rgba(5,10,20,.62);border-bottom:1px solid rgba(0,255,255,.2)}
+.c-brand{font-weight:700;font-size:14px;letter-spacing:.24em;text-transform:uppercase;color:var(--tx)}
+.c-mark{width:26px;height:26px;transition:filter .25s}
+.c-brand:hover .c-mark{filter:drop-shadow(0 0 8px rgba(0,255,255,.9))}
+.c-prog{height:6px;border-radius:9px;background:rgba(255,255,255,.1)}
+.c-prog i{background:linear-gradient(90deg,var(--cy),var(--vi-fort));box-shadow:0 0 12px rgba(0,255,255,.7)}
+.c-cnt{font-family:var(--mono);font-size:13px;letter-spacing:0;color:var(--mu)}
+.c-menu-btn{font-size:14px;letter-spacing:0;min-height:44px;padding:0 18px;color:var(--cy);background:rgba(0,255,255,.08);border:1px solid rgba(0,255,255,.3);border-radius:12px;
+  transition:transform .2s,box-shadow .25s,background .25s,border-color .25s}
+.c-menu-btn:hover{border-color:var(--cy);background:rgba(0,255,255,.12);transform:translateY(-2px);box-shadow:0 0 0 1px rgba(0,255,255,.55),0 10px 34px rgba(0,255,255,.35)}
+.c-menu-btn.a-link{display:inline-flex;align-items:center;text-decoration:none;white-space:nowrap}
+@media (max-width:560px){.c-menu-btn.a-link{padding:0 12px;font-size:13px}}
+
+/* Menu des défis */
+.c-menu{background:#060c18;border:1px solid rgba(0,255,255,.24);box-shadow:0 24px 60px -20px #000,0 0 40px rgba(0,255,255,.08)}
+.c-menu h5{font-family:var(--mono);font-weight:500;letter-spacing:.1em;text-shadow:0 0 14px rgba(0,255,255,.6)}
+.c-menu button.cur{background:rgba(0,255,255,.08);box-shadow:inset 0 0 0 1px var(--cy)}
+
+/* Clic qui parle */
+.c-say-bub{background:rgba(0,255,255,.1);border:1px solid rgba(0,255,255,.28);color:#d6e6fa;box-shadow:none}
+.c-hint{min-height:44px;padding:0 18px;font-size:14px;border-radius:12px;background:rgba(0,255,255,.08);border-color:rgba(0,255,255,.3)}
+
+/* Le défi dans une carte vitrée qui s'allume au survol */
+.c-step{position:relative;background:var(--carte);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(0,255,255,.24);border-radius:18px;padding:clamp(20px,4vw,32px);transition:border-color .35s,box-shadow .35s}
+.c-step:hover{border-color:rgba(0,255,255,.45);box-shadow:0 0 0 1px rgba(0,255,255,.18),0 24px 70px rgba(0,255,255,.12)}
+.c-eyebrow{font-family:var(--mono);font-weight:500;letter-spacing:.1em;text-shadow:0 0 14px rgba(0,255,255,.6)}
+.c-eyebrow::before{border-radius:0;background:var(--ok);box-shadow:0 0 10px var(--ok)}
+.c-badge{border-color:rgba(0,255,255,.3);background:transparent;color:var(--cy);font-size:13px;padding:4px 12px}
+.c-modintro{background:rgba(198,255,51,.06);border-color:rgba(198,255,51,.25);border-left-color:var(--encours)}
+.c-body h4{font-family:var(--mono);font-weight:500;letter-spacing:.1em}
+.c-body .schema{background:#040a14;border-color:rgba(255,255,255,.08);border-radius:14px}
+.c-body .consigne{border-radius:0 10px 10px 0;border-width:0 0 0 3px;background:rgba(0,255,255,.06)}
+.c-body .retenir{background:rgba(131,56,236,.12);border-color:rgba(131,56,236,.45);border-left-color:var(--vi-fort)}
+
+/* Exercice */
+.c-q{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.12);border-radius:12px}
+.c-q.c-a:hover{border-color:var(--cy);background:rgba(0,255,255,.07);box-shadow:0 0 22px rgba(0,255,255,.12)}
+.c-q.c-good{border-color:var(--ok);background:rgba(57,255,20,.08)}
+.c-q.c-bad{border-color:#ff0080;background:rgba(255,0,128,.08)}
+.c-cb,.c-tb{min-height:44px;font-size:14px;border-radius:12px;color:var(--cy);background:rgba(0,255,255,.08);border-color:rgba(0,255,255,.3);transition:transform .2s,box-shadow .25s,background .25s,border-color .25s,color .25s}
+.c-cb:hover,.c-tb:hover{color:var(--cy);border-color:var(--cy);transform:translateY(-2px);box-shadow:0 0 0 1px rgba(0,255,255,.55),0 10px 34px rgba(0,255,255,.35)}
+.c-sw a{border-radius:12px}
+
+/* Gros bouton : dégradé cyan → violet qui glisse, contour blanc */
+@keyframes lc-sheen{0%{background-position:0% 50%}100%{background-position:200% 50%}}
+.c-next{color:#02121c;font-weight:700;border-radius:12px;background:linear-gradient(90deg,#00ffff,#8338ec,#00ffff);background-size:200% 100%;animation:lc-sheen 6s linear infinite;
+  box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.62),0 0 16px rgba(255,255,255,.14);transition:transform .2s,box-shadow .25s}
+.c-next:hover{transform:translateY(-2px);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.85),0 0 0 1px rgba(0,255,255,.55),0 10px 34px rgba(0,255,255,.45)}
+.c-next:active{transform:scale(.98)}
+
+/* Félicitations et échec */
+.c-win{border-color:rgba(57,255,20,.5);background:linear-gradient(160deg,rgba(57,255,20,.12),rgba(0,255,255,.08));box-shadow:0 0 40px rgba(57,255,20,.12)}
+.c-fail{border-color:rgba(255,0,128,.45);background:rgba(255,0,128,.06)}
+.c-num{background:var(--cy);color:#02121c;box-shadow:0 0 14px rgba(0,255,255,.7)}
+.c-mission{border-color:rgba(0,255,255,.35);background:rgba(0,255,255,.05);border-radius:14px}
+
+:focus-visible{outline:2px solid var(--cy);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){body::after,.lc-spark,.c-next{animation:none!important}}
