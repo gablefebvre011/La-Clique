@@ -1,0 +1,50 @@
+/* La Clique — gros titres néon (contour cyan, bas des lettres en magenta)
+ * À utiliser seulement pour les GROS titres (24 px et plus).
+ *
+ * <h2 class="neon" data-text="Une base gratuite, puis le métier que tu veux">
+ *   Une base gratuite, puis le métier que tu veux
+ * </h2>
+ *
+ * Le texte dans data-text doit être identique à celui de la balise.
+ * Taille: ajoute style="font-size:34px" (ou une classe à toi).
+ */
+@font-face{
+  font-family:'Chakra Petch';
+  font-weight:700;
+  font-style:normal;
+  font-display:swap;
+  src:url('../assets/fonts/chakra-petch-700.woff2') format('woff2');
+}
+.neon{
+  --neon-cyan:#19e6ff;
+  --neon-magenta:#ff4fd8;
+  position:relative;
+  margin:0;
+  font-family:'Chakra Petch','Space Grotesk',system-ui,sans-serif;
+  font-weight:700;
+  font-size:clamp(1.9rem,9vw,3.4rem);
+  line-height:1.08;
+  letter-spacing:.03em;
+  text-transform:uppercase;
+  color:transparent;
+  -webkit-text-stroke:1.3px var(--neon-cyan);
+  filter:drop-shadow(0 0 3px rgba(25,230,255,.8)) drop-shadow(0 0 12px rgba(25,230,255,.35));
+}
+.neon::after{
+  content:attr(data-text);
+  position:absolute;
+  inset:0;
+  text-transform:uppercase;
+  color:transparent;
+  -webkit-text-stroke:1.3px var(--neon-magenta);
+  -webkit-mask-image:linear-gradient(to bottom,transparent 58%,#000 68%);
+  mask-image:linear-gradient(to bottom,transparent 58%,#000 68%);
+  -webkit-mask-size:100% 1.08em;
+  mask-size:100% 1.08em;
+  -webkit-mask-repeat:repeat-y;
+  mask-repeat:repeat-y;
+  pointer-events:none;
+}
+/* Petit format (noms de métiers, boutons): contour plus fin */
+.neon--s{font-size:1.5rem;line-height:1.1;-webkit-text-stroke-width:1.1px}
+.neon--s::after{-webkit-text-stroke-width:1.1px;-webkit-mask-size:100% 1.1em;mask-size:100% 1.1em}
